@@ -1,0 +1,71 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Breezy Archives\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-09-02 09:48+0800\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Joel Lee <elohim@gmail.com>\n"
+"Language-Team: Joel Lee <elohim@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Chinese\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: _e;_t;_n:1,2;_ne:1,2\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=2; plural=n==1?0:1;\n"
+"X-Poedit-Country: TAIWAN\n"
+"X-Poedit-SearchPath-0: D:\\htdocs\\_\\bcse-svn\\habari-extras\\plugins\\pageless\n"
+
+#: D:\htdocs\_\bcse-svn\habari-extras\plugins\pageless/pageless.php:8
+msgid "Comments to this post"
+msgstr "對這篇文章發表迴響"
+
+#: D:\htdocs\_\bcse-svn\habari-extras\plugins\pageless/pageless.php:8
+#, fuzzy, php-format
+msgid "%1$d Comment"
+msgid_plural "%1$d Comments"
+msgstr[0] "%1$d 則迴響"
+msgstr[1] ""
+
+#: D:\htdocs\_\bcse-svn\habari-extras\plugins\pageless/pageless.php:13
+msgid "Edit post"
+msgstr "編輯文章"
+
+#: D:\htdocs\_\bcse-svn\habari-extras\plugins\pageless/pageless.php:13
+msgid "Edit"
+msgstr "編輯"
+
+#: D:\htdocs\_\bcse-svn\habari-extras\plugins\pageless/pageless.plugin.php:54
+#: D:\htdocs\_\bcse-svn\habari-extras\plugins\pageless/pageless.plugin.php:69
+#, fuzzy
+msgid "Configure"
+msgstr "設定"
+
+#: D:\htdocs\_\bcse-svn\habari-extras\plugins\pageless/pageless.plugin.php:72
+msgid "How many posts to load each time?"
+msgstr "一次載入幾篇文章？"
+
+#: D:\htdocs\_\bcse-svn\habari-extras\plugins\pageless/pageless.plugin.php:76
+msgid "CSS Class Name of Posts"
+msgstr "文章的 CSS Class"
+
+#: D:\htdocs\_\bcse-svn\habari-extras\plugins\pageless/pageless.plugin.php:79
+msgid "ID of Page Selector"
+msgstr "分頁選擇器的 ID"
+
+#: D:\htdocs\_\bcse-svn\habari-extras\plugins\pageless/pageless.plugin.php:83
+#, fuzzy
+msgid "Save"
+msgstr "儲存"
+
+#: D:\htdocs\_\bcse-svn\habari-extras\plugins\pageless/pageless.plugin.php:84
+#, fuzzy
+msgid "Options saved"
+msgstr "設定已儲存"
+
+#: D:\htdocs\_\bcse-svn\habari-extras\plugins\pageless/pageless.plugin.php:94
+#, fuzzy
+msgid "This field must be positive integer."
+msgstr "此欄位必須填入正整數。"
+

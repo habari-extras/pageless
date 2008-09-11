@@ -19,25 +19,25 @@ class PagelessHandler extends ActionHandler
 	public function act_display_pageless()
 	{
 		$this->handler_vars = array_merge($this->default_fields, $this->handler_vars);
-		$post = Post::get( array( 'slug' => $this->handler_vars['slug'] ) );
-		if ( $post instanceof Post ) {
+		$post = Post::get(array('slug' => $this->handler_vars['slug']));
+		if ($post instanceof Post) {
 			// Default params
 			$params = array(
 				'before' => $post->pubdate,
 				'content_type' => $post->content_type,
-				'limit' => Options::get( 'pageless__num_item' ),
+				'limit' => Options::get('pageless__num_item'),
 				'orderby' => 'pubdate DESC'
 				);
 
 			// Additional filters, in other word, handling act_display
-			if ( array_key_exists('type', $this->handler_vars) ) {
-				if ( $this->handler_vars['type'] === 'tag' ) {
+			if (isset($this->handler_vars['type'])) {
+				if ($this->handler_vars['type'] === 'tag') {
 					$params['tag_slug'] = $this->handler_vars['param'];
 				} else
-				if ( $this->handler_vars['type'] === 'date' ) {
+				if ($this->handler_vars['type'] === 'date') {
 					$date = explode('/', $this->handler_vars['param']);
 					$params_count = count($date);
-					switch ( $params_count ) {
+					switch ($params_count) {
 						case 3:
 							$params['day'] = $date[2];
 						case 2:
@@ -48,15 +48,15 @@ class PagelessHandler extends ActionHandler
 							break;
 					}
 				} else
-				if ( $this->handler_vars['type'] === 'search' ) {
+				if ($this->handler_vars['type'] === 'search') {
 					$params['criteria'] = $this->handler_vars['param'];
 				}
 			}
 
 			// Get $posts -> Assign $posts to theme -> Display template
-			$posts = Posts::get( $params );
-			$this->theme->assign( 'posts', $posts );
-			$this->theme->display( 'pageless' );
+			$posts = Posts::get($params);
+			$this->theme->assign('posts', $posts);
+			$this->theme->display('pageless');
 		}
 	}
 }
