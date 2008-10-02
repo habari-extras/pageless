@@ -24,7 +24,7 @@ class Pageless extends Plugin
 	{
 		return array(
 			'name' => 'Pageless',
-			'version' => '0.2-pre',
+			'version' => '0.6-0.2-pre',
 			'url' => 'http://blog.bcse.info/pageless-plugin-for-habari',
 			'author' => 'Joel Lee',
 			'authorurl' => 'http://blog.bcse.info/',
