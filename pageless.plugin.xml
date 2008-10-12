@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<theme>
+	<name>Pageless</name>
+	<url>http://code.google.com/p/bcse/wiki/Pageless</url>
+	<author>Joel Lee</author>
+	<authorurl>http://blog.bcse.info/</authorurl>
+	<version>0.6-0.2-pre</version>
+	<description>Give your blog the ability of infinite scrolling, instead of breaking content into ‘pages.’</description>
+	<license url="http://bcse.googlecode.com/svn/LICENSE">Apache License 2.0</license>
+	<copyright>2008</copyright>
+</theme>

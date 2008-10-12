@@ -1,6 +1,6 @@
 <?php
 /**
- * Pageless Plugin: Give your blog the ability of Infinite scrolling, instead of breaking content into ‘pages.’
+ * Pageless Plugin
  */
 
 require_once 'pagelesshandler.php';
@@ -25,11 +25,11 @@ class Pageless extends Plugin
 		return array(
 			'name' => 'Pageless',
 			'version' => '0.6-0.2-pre',
-			'url' => 'http://blog.bcse.info/pageless-plugin-for-habari',
+			'url' => 'http://code.google.com/p/bcse/wiki/Pageless',
 			'author' => 'Joel Lee',
 			'authorurl' => 'http://blog.bcse.info/',
 			'license' => 'Apache License 2.0',
-			'description' => 'Give your blog the ability of Infinite scrolling, instead of breaking content into ‘pages.’',
+			'description' => 'Give your blog the ability of infinite scrolling, instead of breaking content into ‘pages.’',
 			'copyright' => '2008'
 		);
 	}
