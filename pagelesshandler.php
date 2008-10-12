@@ -23,10 +23,9 @@ class PagelessHandler extends ActionHandler
 		if ($post instanceof Post) {
 			// Default params
 			$params = array(
-				'before' => $post->pubdate,
-				'content_type' => $post->content_type,
+				'where' => "(pubdate < '{$post->pubdate->sql}' OR (pubdate = '{$post->pubdate->sql}' AND id < {$post->id})) AND content_type = {$post->content_type} AND status = {$post->status}",
 				'limit' => Options::get('pageless__num_item'),
-				'orderby' => 'pubdate DESC'
+				'orderby' => 'pubdate DESC, id DESC'
 				);
 
 			// Additional filters, in other word, handling act_display
