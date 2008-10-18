@@ -24,7 +24,7 @@ class Pageless extends Plugin
 	{
 		return array(
 			'name' => 'Pageless',
-			'version' => '0.6-0.2-pre',
+			'version' => '0.2',
 			'url' => 'http://code.google.com/p/bcse/wiki/Pageless',
 			'author' => 'Joel Lee',
 			'authorurl' => 'http://blog.bcse.info/',
@@ -265,7 +265,9 @@ class Pageless extends Plugin
 
 		// If 'slug' exists, then it must be single, don't do anything
 		if (!isset(self::$handler_vars['slug'])) {
-			Stack::add('template_footer_javascript', 'http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js', 'jquery');
+			// If jQuery is loaded in header, then do not load it again
+			if (!Stack::has('template_header_javascript', 'jquery'))
+				Stack::add('template_footer_javascript', 'http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js', 'jquery');
 			Stack::add('template_footer_javascript', Site::get_url('scripts') . '/jquery.spinner.js', 'jquery.spinner');
 			Stack::add('template_footer_javascript', URL::get('display_pageless_js', array('config' => md5(serialize(array_merge($this->config, self::$handler_vars))))), 'jquery.pageless');
 		}
