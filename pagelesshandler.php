@@ -18,8 +18,9 @@ class PagelessHandler extends ActionHandler
 
 	public function act_display_pageless()
 	{
-		$this->handler_vars = array_merge($this->default_fields, $this->handler_vars);
-		$post = Post::get(array('slug' => $this->handler_vars['slug']));
+		$filters = new SuperGlobal($this->default_fields);
+		$filters = $filters->merge($this->handler_vars);
+		$post = Post::get(array('slug' => $filters['slug']));
 		if ($post instanceof Post) {
 			// Default params
 			$params = array(
@@ -29,12 +30,12 @@ class PagelessHandler extends ActionHandler
 				);
 
 			// Additional filters, in other word, handling act_display
-			if (isset($this->handler_vars['type'])) {
-				if ($this->handler_vars['type'] === 'tag') {
-					$params['tag_slug'] = $this->handler_vars['param'];
+			if (isset($filters['type'])) {
+				if ($filters['type'] === 'tag') {
+					$params['tag_slug'] = $filters['param'];
 				} else
-				if ($this->handler_vars['type'] === 'date') {
-					$date = explode('/', $this->handler_vars['param']);
+				if ($filters['type'] === 'date') {
+					$date = explode('/', $filters['param']);
 					$params_count = count($date);
 					switch ($params_count) {
 						case 3:
@@ -47,8 +48,8 @@ class PagelessHandler extends ActionHandler
 							break;
 					}
 				} else
-				if ($this->handler_vars['type'] === 'search') {
-					$params['criteria'] = $this->handler_vars['param'];
+				if ($filters['type'] === 'search') {
+					$params['criteria'] = $filters['param'];
 				}
 			}
 

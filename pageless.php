@@ -9,7 +9,7 @@
 <?php if (is_array($post->tags)) { ?>
 					<li class="entry-tags"><?php echo $post->tags_out; ?></li>
 <?php } ?>
-<?php if (isset($user) && $user) { ?>
+<?php if (User::identify()->loggedin) { ?>
 					<li class="entry-edit"><a href="<?php URL::out('admin', 'page=publish&id=' . $post->id); ?>" title="<?php _e('Edit post', $this->class_name) ?>"><?php _e('Edit', $this->class_name) ?></a></li>
 <?php } ?>
 				</ul>
