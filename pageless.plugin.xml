@@ -4,7 +4,7 @@
 	<url>http://code.google.com/p/bcse/wiki/Pageless</url>
 	<author>Joel Lee</author>
 	<authorurl>http://blog.bcse.info/</authorurl>
-	<license>Apache License 2.0</license>
+	<license url="http://bcse.googlecode.com/svn/LICENSE">Apache License 2.0</license>
 	<description>Give your blog the ability of infinite scrolling, instead of breaking content into ‘pages.’</description>
 	<copyright>2008</copyright>
 </plugin>
