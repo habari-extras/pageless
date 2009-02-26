@@ -9,12 +9,16 @@ class Pageless extends Plugin
 {
 	private $config = array();
 	private $class_name = '';
-	private $default_options = array(
-		'num_item' => '3',
-		'post_class' => 'hentry',
-		'pager_id' => 'page-selector'
-	);
 	private static $handler_vars = array();
+
+	private static function default_options()
+	{
+		return array (
+			'num_item' => '3',
+			'post_class' => 'hentry',
+			'pager_id' => 'page-selector'
+		);
+	}
 
 	/**
 	 * Required plugin information
@@ -29,8 +33,7 @@ class Pageless extends Plugin
 			'author' => 'Joel Lee',
 			'authorurl' => 'http://blog.bcse.info/',
 			'license' => 'Apache License 2.0',
-			'description' => 'Give your blog the ability of infinite scrolling, instead of breaking content into ‘pages.’',
-			'copyright' => '2008'
+			'description' => _t('Give your blog the ability of infinite scrolling, instead of breaking content into ‘pages.’', $this->class_name)
 		);
 	}
 
@@ -112,7 +115,7 @@ class Pageless extends Plugin
 	{
 		if (realpath($file) === __FILE__) {
 			$this->class_name = strtolower(get_class($this));
-			foreach ($this->default_options as $name => $value) {
+			foreach (self::default_options() as $name => $value) {
 				$current_value = Options::get($this->class_name . '__' . $name);
 				if (is_null($current_value)) {
 					Options::set($this->class_name . '__' . $name, $value);
@@ -127,7 +130,7 @@ class Pageless extends Plugin
 	public function action_init()
 	{
 		$this->class_name = strtolower(get_class($this));
-		foreach ($this->default_options as $name => $value) {
+		foreach (self::default_options() as $name => $value) {
 			$this->config[$name] = Options::get($this->class_name . '__' . $name);
 		}
 		$this->load_text_domain($this->class_name);
@@ -267,7 +270,7 @@ class Pageless extends Plugin
 		if (!isset(self::$handler_vars['slug'])) {
 			// If jQuery is loaded in header, then do not load it again
 			if (!Stack::has('template_header_javascript', 'jquery'))
-				Stack::add('template_footer_javascript', 'http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js', 'jquery');
+				Stack::add('template_footer_javascript', 'http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js', 'jquery');
 			Stack::add('template_footer_javascript', Site::get_url('scripts') . '/jquery.spinner.js', 'jquery.spinner', 'jquery');
 			$params = new SuperGlobal($this->config);
 			$params = $params->merge(self::$handler_vars);
