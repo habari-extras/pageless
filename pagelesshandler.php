@@ -1,7 +1,7 @@
 <?php
 class PagelessHandler extends ActionHandler
 {
-	private $theme = null;
+	public $theme = null;
 	private $default_fields = array(
 		'slug' => ''
 	);
