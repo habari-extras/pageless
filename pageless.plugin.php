@@ -21,23 +21,6 @@ class Pageless extends Plugin
 	}
 
 	/**
-	 * Required plugin information
-	 * @return array The array of information
-	 **/
-	public function info()
-	{
-		return array(
-			'name' => 'Pageless',
-			'version' => '0.2',
-			'url' => 'http://code.google.com/p/bcse/wiki/Pageless',
-			'author' => 'Joel Lee',
-			'authorurl' => 'http://blog.bcse.info/',
-			'license' => 'Apache License 2.0',
-			'description' => _t('Give your blog the ability of infinite scrolling, instead of breaking content into ‘pages.’', $this->class_name)
-		);
-	}
-
-	/**
 	 * Add update beacon support
 	 **/
 	public function action_update_check()

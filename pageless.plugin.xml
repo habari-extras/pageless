@@ -1,11 +1,11 @@
-<plugin>
+<?xml version="1.0" encoding="utf-8" ?>
+<pluggable type="plugin">
 	<name>Pageless</name>
 	<version>0.2</version>
 	<url>http://code.google.com/p/bcse/wiki/Pageless</url>
-	<author>Joel Lee</author>
-	<authorurl>http://blog.bcse.info/</authorurl>
-	<license url="http://bcse.googlecode.com/svn/LICENSE">Apache License 2.0</license>
-	<description>Give your blog the ability of infinite scrolling, instead of breaking content into ‘pages.’</description>
+	<author url="http://blog.bcse.info/">Joel Lee</author>
+	<license url="http://www.apache.org/licenses/LICENSE-2.0.html">Apache License 2.0</license>
+	<description><![CDATA[Give your blog the ability of infinite scrolling, instead of breaking content into ‘pages.’]]></description>
 	<copyright>2008</copyright>
-</plugin>
+</pluggable>
 
