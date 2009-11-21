@@ -253,7 +253,6 @@ class Pageless extends Plugin
 			// If jQuery is loaded in header, then do not load it again
 			if (!Stack::has('template_header_javascript', 'jquery'))
 				Stack::add('template_footer_javascript', 'http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js', 'jquery');
-			Stack::add('template_footer_javascript', Site::get_url('scripts') . '/jquery.spinner.js', 'jquery.spinner', 'jquery');
 			$params = new SuperGlobal($this->config);
 			$params = $params->merge(self::$handler_vars);
 			Stack::add('template_footer_javascript', URL::get('display_pageless_js', array('config' => md5(serialize($params)))), 'jquery.pageless', 'jquery');
