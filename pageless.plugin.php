@@ -178,11 +178,10 @@ class Pageless extends Plugin
 		$("#' . $this->config['pager_id'] . '").before("<div id=\"pageless-indicator\"></div>");
 		var spinner = {
 			start: function() {
-				$("#pageless-indicator").spinner({height:32,width:32,speed:50,image:"' . $this->get_url(TRUE) . 'spinnersmalldark.png"});
+				$("#pageless-indicator").html(\'<img src="' . Site::get_url( 'admin_theme' ) . '/images/spin.gif">\');
 				$("#pageless-indicator").show();
 			},
 			stop: function() {
-				$("#pageless-indicator").spinner("stop");
 				$("#pageless-indicator").hide();
 			}
 		}
